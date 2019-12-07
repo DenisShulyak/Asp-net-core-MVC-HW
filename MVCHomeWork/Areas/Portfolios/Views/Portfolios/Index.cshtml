@@ -1,0 +1,58 @@
+﻿@model IEnumerable<MVCHomeWork.Models.Portfolio>
+
+@{
+    ViewData["Title"] = "Portfolios";
+}
+
+    <h1>Portfolios</h1>
+
+<p>
+    <a asp-action="Create">Добавить портфолио</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InfoAboutMe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InfoAboutStudy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AboutWork)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Achievement)
+            </th>
+            <th>
+                Пример работы
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InfoAboutMe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InfoAboutStudy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AboutWork)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Achievement)
+            </td>
+            <td>
+                @{
+                    var src = item.Id.ToString() + ".png";
+                }
+                <img width="470px" height="1000px" src='~/img/@src' />
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>

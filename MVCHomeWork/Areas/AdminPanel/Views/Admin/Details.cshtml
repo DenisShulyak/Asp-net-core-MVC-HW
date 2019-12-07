@@ -1,0 +1,48 @@
+﻿@model MVCHomeWork.Models.Portfolio
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Portfolio</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.InfoAboutMe)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.InfoAboutMe)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.InfoAboutStudy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.InfoAboutStudy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AboutWork)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AboutWork)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Achievement)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Achievement)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
